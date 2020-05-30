@@ -31,7 +31,12 @@ const TarjetaConsulta = ({info}) => {
                         <Text style={styles.texto}>
                             Estado:
                         </Text>
-                        <Text style={{color: item.estado ? '#00e600' : '#ff1a1a'}}>{item.estado ? 'Agendada':'En espera'}</Text>
+                        <Text style={{
+                            color: item.estado ? '#00e600' : '#ff1a1a',
+                            fontSize: 18,
+                            alignSelf: 'center',
+                            marginHorizontal: 10
+                        }}>{item.estado ? 'Agendada':'En espera'}</Text>
                     </View>
                 </View>
                 <TouchableOpacity
