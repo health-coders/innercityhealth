@@ -22,6 +22,9 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
     const [esVisibleDatePicker, setEsVisibleDatePicker] = useState(false);
     const [esVisibleTimePicker, setEsVisibleTimePicker] = useState(false);
 
+    const [fecha, setFecha] = useState('')
+    const [hora, setHora] = useState('')
+
     const mostrarDatePicker = () => {
         setEsVisibleDatePicker(true);
     };
@@ -30,12 +33,12 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
         setEsVisibleDatePicker(false);
     };
 
-    const confirmarFecha = (date) => {
-        console.warn("A date has been picked: ", date);
+    const confirmarFecha = (fecha) => {
+        setFecha(fecha.toLocaleDateString('es-ES', {year: 'numeric', day: '2-digit', month: 'long'}));
         ocultarDatePicker();
     };
-    const confirmarHora = (date) => {
-        console.warn("A date has been picked: ", date);
+    const confirmarHora = (hora) => {
+        setHora(hora.toLocaleString('en-US',{hour: 'numeric', minute: '2-digit'}))
         ocultarTimePicker();
     };
 
@@ -50,7 +53,6 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
     //TODO
     const guardarCita = () => {
         Alert.alert('Verifique su información antes de confirmar')
-
 
         setTimeout(() => {
             Alert.alert('CITA REGISTRADA')
@@ -90,32 +92,50 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                             style={styles.textInput}
                         />
 
-                        <Text style={styles.subtitulo}> Seleccione fecha </Text>
+                        <Text style={styles.subtitulo}>Fecha y Hora de la consulta</Text>
 
                         <TouchableOpacity style={styles.btnSeleccionar} onPress={mostrarDatePicker}>
-                            <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 17}}>Seleccionar Fecha</Text>
+                            <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 17, paddingHorizontal: 5}}>
+                                Seleccionar Fecha
+                            </Text>
                         </TouchableOpacity>
-
                         <DateTimePickerModal
                             isVisible={esVisibleDatePicker}
                             mode="date"
                             onConfirm={confirmarFecha}
                             onCancel={ocultarDatePicker}
                         />
-                        <TouchableOpacity style={styles.btnSeleccionar} onPress={mostrarTimePicker()}>
-                            <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 17}}>Seleccionar Hora</Text>
-                        </TouchableOpacity>
 
+                        <Text style={{
+                            marginHorizontal: 20,
+                            fontSize: 16,
+                            marginVertical: 10,
+                        }}>
+                            Fecha: {fecha}
+                        </Text>
+
+                        <TouchableOpacity style={styles.btnSeleccionar} onPress={mostrarTimePicker}>
+                            <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 17, paddingHorizontal: 5}}>
+                                Seleccionar Hora
+                            </Text>
+                        </TouchableOpacity>
                         <DateTimePickerModal
                             isVisible={esVisibleTimePicker}
-                            mode="time"
+                            mode='time'
                             onConfirm={confirmarHora}
                             onCancel={ocultarTimePicker}
                         />
+                        <Text style={{
+                            marginHorizontal: 20,
+                            fontSize: 16,
+                            marginVertical: 10,
+                        }}>
+                            Hora: {hora}
+                        </Text>
 
                         <TouchableOpacity style={styles.btnSeleccionar} onPress={() => {
                             navigation.goBack()
-                            //guardarCita()
+                            guardarCita()
                         }}>
                             <Text style={{
                                 fontWeight: 'bold',
