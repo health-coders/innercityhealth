@@ -41,7 +41,7 @@ const TarjetaConsulta = ({info}) => {
                 </View>
                 <TouchableOpacity
                     style={styles.botonMasInfo}
-                    onPress={() => navigation.navigate('', info)}
+                    onPress={() => navigation.navigate('InfoConsulta', info)}
                 >
                     <Text style={{color: 'white', fontSize: 20}}>Más info.</Text>
                 </TouchableOpacity>

@@ -3,6 +3,7 @@ import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
 
 const PantallaPrincipalAlertas = ({navigation}) => {
 
+    //TODO
     return (
         <>
             <TouchableOpacity
@@ -16,7 +17,7 @@ const PantallaPrincipalAlertas = ({navigation}) => {
                 style={styles.btnPrincipal}
                 //onPress={() => navigation.navigate('')}
             >
-                <Text style={styles.textoBtn}>Alerta Específicas</Text>
+                <Text style={styles.textoBtn}>Alerta Específica</Text>
             </TouchableOpacity>
         </>
     );
