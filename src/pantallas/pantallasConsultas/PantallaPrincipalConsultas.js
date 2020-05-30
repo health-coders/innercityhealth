@@ -3,7 +3,7 @@ import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {guardarCitaDisponibles, guardarCitasPendientes} from '../../actions';
 
-const PantallaPrincipalConsultas = ({navigation, onGuardarCitasPendientes, onGuardarCitasDisponibles}) => {
+const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes, onGuardarCitasDisponibles}) => {
 
     useEffect(() => {
         onGuardarCitasDisponibles([{
@@ -94,30 +94,20 @@ const PantallaPrincipalConsultas = ({navigation, onGuardarCitasPendientes, onGua
     return (
         <>
             <TouchableOpacity
-                onPress={() => navigation.navigate('Disponibles')}
+                onPress={() => navigation.navigate('AgendarConsulta')}
                 style={styles.btnPrincipal}>
                 <Text
                     style={styles.textoBtn}
                 >
-                    CONSULTAS DISPONIBLES
+                    Agendar Consulta
                 </Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btnPrincipal}
-                              onPress={() => navigation.navigate('Pendientes')}
+                              onPress={() => navigation.navigate('MisConsultas')}
             >
-                <Text style={styles.textoBtn}> CONSULTAS PENDIENTES</Text>
+                <Text style={styles.textoBtn}> Mis consultas</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity style={styles.btnPrincipal}
-                              onPress={() => navigation.navigate('Registradas')}
-            >
-                <Text
-                    style={styles.textoBtn}
-                >CONSULTAS REGISTRADAS
-                </Text>
-            </TouchableOpacity>
-
 
         </>
     );
@@ -150,4 +140,4 @@ const mapDispatchToProps = dispatch => ({
     onGuardarCitasDisponibles: citas => dispatch(guardarCitaDisponibles(citas))
 });
 
-export default connect(null, mapDispatchToProps)(PantallaPrincipalConsultas);
+export default connect(null, mapDispatchToProps)(HomeConsultasScreen);
