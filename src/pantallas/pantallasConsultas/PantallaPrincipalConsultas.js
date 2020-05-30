@@ -106,7 +106,7 @@ const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes, onGuardarCit
             <TouchableOpacity style={styles.btnPrincipal}
                               onPress={() => navigation.navigate('MisConsultas')}
             >
-                <Text style={styles.textoBtn}> Mis consultas</Text>
+                <Text style={styles.textoBtn}> Mis consultas Pendientes</Text>
             </TouchableOpacity>
 
         </>

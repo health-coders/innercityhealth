@@ -3,7 +3,7 @@ import {FlatList, StyleSheet} from 'react-native';
 import TarjetaConsulta from '../../componentes/tarjetaConsulta/TarjetaConsulta';
 import {connect} from 'react-redux';
 
-const PendientesScreen = ({navigation, citasPendientes}) => {
+const PantallaMisConsulta = ({navigation, citasPendientes}) => {
 
     console.log(citasPendientes);
 
@@ -33,4 +33,4 @@ const mapStateToProps = state => ({
     citasPendientes: state.citasPendientes
 })
 
-export default connect (mapStateToProps, null) (PendientesScreen);
+export default connect (mapStateToProps, null) (PantallaMisConsulta);

@@ -5,13 +5,13 @@ const PantallaPrincipal = ({navigation}) => {
     return (
         <>
             <TouchableOpacity style={styles.btnPrincipal}>
-                <Text style={styles.textoBtn}>Ver{'\n'}alertas</Text>
+                <Text style={styles.textoBtn}>Alertas</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btnPrincipal} onPress={()=>
                 navigation.navigate('PrincipalConsultas')
             }>
-                <Text style={styles.textoBtn}>Ver{'\n'}consultas</Text>
+                <Text style={styles.textoBtn}>Consultas</Text>
             </TouchableOpacity>
         </>
     );
@@ -20,7 +20,7 @@ const PantallaPrincipal = ({navigation}) => {
 const styles = StyleSheet.create({
     textoBtn: {
         fontWeight: 'bold',
-        fontSize: 40
+        fontSize: 40,
     },
     btnPrincipal: {
         flex: 1,
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 2,
         elevation: 5,
+        justifyContent:'center'
     }
 });
 
