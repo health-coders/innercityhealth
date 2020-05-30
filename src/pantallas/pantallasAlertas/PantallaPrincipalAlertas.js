@@ -15,7 +15,7 @@ const PantallaPrincipalAlertas = ({navigation}) => {
 
             <TouchableOpacity
                 style={styles.btnPrincipal}
-                //onPress={() => navigation.navigate('')}
+                onPress={() => navigation.navigate('AlertaEspecifica')}
             >
                 <Text style={styles.textoBtn}>Alerta Específica</Text>
             </TouchableOpacity>

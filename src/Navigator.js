@@ -8,6 +8,7 @@ import PantallaMisConsulta from "./pantallas/pantallasConsultas/PantallaMisConsu
 import PantallaAgendarConsulta from "./pantallas/pantallasConsultas/PantallaAgendarConsulta";
 import PantallaPrincipalAlertas from "./pantallas/pantallasAlertas/PantallaPrincipalAlertas";
 import PantallaInfoConsulta from "./pantallas/pantallasConsultas/PantallaInfoConsulta";
+import PantallaAlertaEspecifica from "./pantallas/pantallasAlertas/PantallaAlertaEspecifica";
 
 const Stack = createStackNavigator();
 
@@ -42,6 +43,11 @@ const Navigation = () => (
             <Stack.Screen
                 name='InfoConsulta'
                 component={PantallaInfoConsulta}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name='AlertaEspecifica'
+                component={PantallaAlertaEspecifica}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>

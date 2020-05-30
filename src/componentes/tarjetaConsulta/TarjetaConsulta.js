@@ -39,6 +39,7 @@ const TarjetaConsulta = ({info}) => {
                         }}>{item.estado ? 'Agendada':'En espera'}</Text>
                     </View>
                 </View>
+
                 <TouchableOpacity
                     style={styles.botonMasInfo}
                     onPress={() => navigation.navigate('InfoConsulta', info)}

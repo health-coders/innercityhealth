@@ -85,7 +85,9 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                         </Picker>
 
                         <Text style={styles.subtitulo}> Motivo de la consulta: </Text>
+
                         <TextInput
+                            //TODO: Corregir el posicionamiento del placeholder
                             placeholder='Motivo de la consulta...'
                             multiline={true}
                             style={styles.textInput}
@@ -187,7 +189,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
 });
-
+    //TODO
 const mapDispatchToProps = dispatch => ({
     onGuardarCitasDisponibles: cita => dispatch(guardarCitaDisponibles(cita))
 });
