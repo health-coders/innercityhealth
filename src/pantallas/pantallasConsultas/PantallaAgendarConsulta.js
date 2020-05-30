@@ -52,8 +52,7 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
 
     //TODO
     const guardarCita = () => {
-        Alert.alert('Verifique su información antes de confirmar')
-
+        navigation.goBack()
         setTimeout(() => {
             Alert.alert('CITA REGISTRADA')
         }, 1800)
@@ -136,7 +135,6 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                         </Text>
 
                         <TouchableOpacity style={styles.btnSeleccionar} onPress={() => {
-                            navigation.goBack()
                             guardarCita()
                         }}>
                             <Text style={{
