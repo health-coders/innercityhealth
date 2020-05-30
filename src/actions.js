@@ -14,4 +14,9 @@ export const guardarCitaDisponibles = (citas) => ({
     type: GUARDAR_CITA_DISPONIBLES,
     payload: citas,
 });
+export const GENERAR_ALERTA_RAPIDA = 'GUARDAR_CITA_DISPONIBLES';
+export const generarAlertaRapda = (datosPaciente) => ({
+    type: GUARDAR_CITA_DISPONIBLES,
+    payload: datosPaciente,
+});
 

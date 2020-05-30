@@ -6,6 +6,7 @@ import PantallaPrincipalConsultas from "./pantallas/pantallasConsultas/PantallaP
 import PantallaPrincipal from "./pantallas/PantallaPrincipal";
 import PantallaMisConsulta from "./pantallas/pantallasConsultas/PantallaMisConsulta";
 import PantallaAgendarConsulta from "./pantallas/pantallasConsultas/PantallaAgendarConsulta";
+import PantallaPrincipalAlertas from "./pantallas/pantallasAlertas/PantallaPrincipalAlertas";
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,11 @@ const Navigation = () => (
             <Stack.Screen
                 name='AgendarConsulta'
                 component={PantallaAgendarConsulta}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name='PrincipalAlertas'
+                component={PantallaPrincipalAlertas}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>

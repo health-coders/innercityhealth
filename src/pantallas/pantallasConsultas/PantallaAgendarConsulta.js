@@ -38,7 +38,7 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
         ocultarDatePicker();
     };
     const confirmarHora = (hora) => {
-        setHora(hora.toLocaleString('en-US',{hour: 'numeric', minute: '2-digit'}))
+        setHora(hora.toLocaleString('en-US', {hour: 'numeric', minute: '2-digit'}))
         ocultarTimePicker();
     };
 
@@ -124,7 +124,9 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                             mode='time'
                             onConfirm={confirmarHora}
                             onCancel={ocultarTimePicker}
+                            is24Hour={false}
                         />
+
                         <Text style={{
                             marginHorizontal: 20,
                             fontSize: 16,
@@ -163,7 +165,7 @@ const styles = StyleSheet.create({
     },
     textInput: {
         width: '80%',
-        height: 235,
+        height: 230,
         alignSelf: 'center',
         borderRadius: 10,
         shadowColor: '#000',

@@ -1,31 +1,27 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
 
-const PantallaPrincipal = ({navigation}) => {
+const PantallaPrincipalAlertas = ({navigation}) => {
+
     return (
         <>
             <TouchableOpacity
                 style={styles.btnPrincipal}
-                onPress={()=>navigation.navigate('PrincipalAlertas')}
+                //onPress={() => navigation.navigate('')}
             >
-                <Text style={styles.textoBtn}>Alertas</Text>
+                <Text style={styles.textoBtn}>Alerta Rápida</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.btnPrincipal}
-                onPress={() => navigation.navigate('PrincipalConsultas')}
+                //onPress={() => navigation.navigate('')}
             >
-                <Text style={styles.textoBtn}>Consultas</Text>
+                <Text style={styles.textoBtn}>Alerta Específicas</Text>
             </TouchableOpacity>
         </>
     );
-};
-
+}
 const styles = StyleSheet.create({
-    textoBtn: {
-        fontWeight: 'bold',
-        fontSize: 40,
-    },
     btnPrincipal: {
         flex: 1,
         backgroundColor: '#ffffff',
@@ -38,7 +34,11 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         elevation: 5,
         justifyContent: 'center'
-    }
+    },
+    textoBtn: {
+        fontWeight: 'bold',
+        fontSize: 35,
+    },
 });
 
-export default PantallaPrincipal;
+export default PantallaPrincipalAlertas;

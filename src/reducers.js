@@ -1,4 +1,4 @@
-import {GUARDAR_CITAS_PENDIENTES, ELIMINAR_CITA_PENDIENTE, GUARDAR_CITA_DISPONIBLES} from './actions';
+import {GUARDAR_CITAS_PENDIENTES, ELIMINAR_CITA_PENDIENTE, GUARDAR_CITA_DISPONIBLES,GENERAR_ALERTA_RAPIDA} from './actions';
 
 export const citasPendientes = (state = [], action) => {
     const {type, payload} = action;
@@ -26,5 +26,16 @@ export const citasDisponibles = (state = [], action) => {
         default:
             return state;
     }
-
 };
+
+export const alertas=(state=[],action)=>{
+    const {type,payload}=action;
+
+    switch (type) {
+        case  GENERAR_ALERTA_RAPIDA:{
+            return payload;
+        }
+        default:
+            return state;
+    }
+}
