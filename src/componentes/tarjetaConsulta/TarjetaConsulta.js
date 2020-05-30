@@ -27,10 +27,16 @@ const TarjetaConsulta = ({info}) => {
                     <Text style={styles.texto}>
                         Dirección: {item.direccion}
                     </Text>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={styles.texto}>
+                            Estado:
+                        </Text>
+                        <Text style={{color: item.estado ? '#00e600' : '#ff1a1a'}}>{item.estado ? 'Agendada':'En espera'}</Text>
+                    </View>
                 </View>
                 <TouchableOpacity
                     style={styles.botonMasInfo}
-                    onPress={() => navigation.navigate('InfoConsulta', info)}
+                    onPress={() => navigation.navigate('', info)}
                 >
                     <Text style={{color: 'white', fontSize: 20}}>Más info.</Text>
                 </TouchableOpacity>

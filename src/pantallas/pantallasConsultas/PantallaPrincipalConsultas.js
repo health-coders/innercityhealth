@@ -3,7 +3,8 @@ import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {guardarCitaDisponibles, guardarCitasPendientes} from '../../actions';
 
-const PantallaPrincipalConsultas=({navigation, onGuardarCitasPendientes, onGuardarCitasDisponibles})=> {
+const PantallaPrincipalConsultas = ({navigation, onGuardarCitasPendientes, onGuardarCitasDisponibles}) => {
+
     useEffect(() => {
         onGuardarCitasDisponibles([{
             id: '1',
@@ -89,10 +90,11 @@ const PantallaPrincipalConsultas=({navigation, onGuardarCitasPendientes, onGuard
             },
         ]);
     }, []);
+
     return (
         <>
             <TouchableOpacity
-                onPress={() => navigation.navigate('')}
+                onPress={() => navigation.navigate('Disponibles')}
                 style={styles.btnPrincipal}>
                 <Text
                     style={styles.textoBtn}
@@ -102,13 +104,13 @@ const PantallaPrincipalConsultas=({navigation, onGuardarCitasPendientes, onGuard
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btnPrincipal}
-                              onPress={() => navigation.navigate('')}
+                              onPress={() => navigation.navigate('Pendientes')}
             >
                 <Text style={styles.textoBtn}> CONSULTAS PENDIENTES</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btnPrincipal}
-                              onPress={() => navigation.navigate('')}
+                              onPress={() => navigation.navigate('Registradas')}
             >
                 <Text
                     style={styles.textoBtn}
@@ -143,5 +145,9 @@ const styles = StyleSheet.create({
     },
 });
 
+const mapDispatchToProps = dispatch => ({
+    onGuardarCitasPendientes: citas => dispatch(guardarCitasPendientes(citas)),
+    onGuardarCitasDisponibles: citas => dispatch(guardarCitaDisponibles(citas))
+});
 
-export default PantallaPrincipalConsultas;
+export default connect(null, mapDispatchToProps)(PantallaPrincipalConsultas);

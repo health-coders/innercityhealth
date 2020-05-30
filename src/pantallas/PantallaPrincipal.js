@@ -9,7 +9,7 @@ const PantallaPrincipal = ({navigation}) => {
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btnPrincipal} onPress={()=>
-                navigation.navigate('HomeConsultas')
+                navigation.navigate('PrincipalConsultas')
             }>
                 <Text style={styles.textoBtn}>Ver{'\n'}consultas</Text>
             </TouchableOpacity>
