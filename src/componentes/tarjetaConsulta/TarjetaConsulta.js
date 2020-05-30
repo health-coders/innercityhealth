@@ -12,7 +12,7 @@ const TarjetaConsulta = ({info}) => {
         <>
             <View style={styles.targetaConsulta}>
                 <View>
-                    <Text style={styles.texto}>
+                    <Text style={styles.textoNombrePaciente}>
                         {item.nombrePaciente}
                     </Text>
                     <Text style={styles.texto}>
@@ -68,10 +68,14 @@ const styles = StyleSheet.create({
     texto: {
         fontSize: 20,
     },
+    textoNombrePaciente:{
+        fontSize: 20,
+        fontWeight:'bold'
+    },
     botonMasInfo: {
         backgroundColor: '#792bff',
         marginTop: 12,
-        borderRadius: 3,
+        borderRadius: 6,
         padding: 5,
         paddingHorizontal: 10,
         alignSelf: 'flex-end',
