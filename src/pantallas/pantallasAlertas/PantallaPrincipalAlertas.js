@@ -1,9 +1,8 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity,Image} from 'react-native'
+import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native'
 
 const PantallaPrincipalAlertas = ({navigation}) => {
 
-    //TODO
     return (
         <>
             <View style={{flex: 1}}>
@@ -12,7 +11,7 @@ const PantallaPrincipalAlertas = ({navigation}) => {
                     onPress={() => navigation.navigate('BuscandoAtencion')}
                 >
                     <Image
-                        style = {{ width: 200,height: 200}}
+                        style={{width: 200, height: 200}}
                         source={require('../../assets/HC_FastAlert.png')}
                     />
 
@@ -20,14 +19,14 @@ const PantallaPrincipalAlertas = ({navigation}) => {
                 </TouchableOpacity>
             </View>
 
-            <View style={{flex:1}}>
-            <TouchableOpacity
-                style={styles.btnPrincipal}
-                onPress={() => navigation.navigate('AlertaEspecifica')}
-            >
-                <Image style={{width:200,height: 200}}source={require('../../assets/HC_ALERTA_ESP.png')}/>
-                <Text style={styles.textoBtn}>Alerta Específica</Text>
-            </TouchableOpacity>
+            <View style={{flex: 1}}>
+                <TouchableOpacity
+                    style={styles.btnPrincipal}
+                    onPress={() => navigation.navigate('AlertaEspecifica')}
+                >
+                    <Image style={{width: 200, height: 200}} source={require('../../assets/HC_ALERTA_ESP.png')}/>
+                    <Text style={styles.textoBtn}>Alerta Específica</Text>
+                </TouchableOpacity>
             </View>
         </>
     );
