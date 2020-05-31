@@ -73,7 +73,7 @@ const PantallaMapaDireccionUsuario = () => {
                     showsUserLocation={true}
                     ref={ref => setMovimiento(ref)}
                     onPress={escogerLocalizacionConClick}
-                />
+                >{marcador}</MapView>
 
                 <TouchableOpacity
                     style={styles.boton}
