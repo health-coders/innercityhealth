@@ -106,6 +106,12 @@ const PantallaMapaDireccionUsuario = ({navigator}) => {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        ...StyleSheet.absoluteFillObject,
+        position: 'absolute',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+    },
     map: {
         width: '90%',
         height: 350,
