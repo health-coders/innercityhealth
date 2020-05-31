@@ -1,18 +1,24 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
+import {StyleSheet, View, Text, TouchableOpacity,Image} from 'react-native'
 
 const PantallaPrincipalAlertas = ({navigation}) => {
 
     //TODO
     return (
         <>
-            <TouchableOpacity
-                style={styles.btnPrincipal}
-                onPress={() => navigation.navigate('BuscandoAtencion')}
-            >
-                <Text style={styles.textoBtn}>Alerta Rápida</Text>
-            </TouchableOpacity>
+            <View style={{flex: 1}}>
+                <TouchableOpacity
+                    style={styles.btnPrincipal}
+                    onPress={() => navigation.navigate('BuscandoAtencion')}
+                >
+                    <Image
+                        style = {{ width: 200,height: 200}}
+                        source={require('../../assets/HC_FastAlert.png')}
+                    />
 
+                    <Text style={styles.textoBtn}>Alerta Rápida</Text>
+                </TouchableOpacity>
+            </View>
             <TouchableOpacity
                 style={styles.btnPrincipal}
                 onPress={() => navigation.navigate('AlertaEspecifica')}
