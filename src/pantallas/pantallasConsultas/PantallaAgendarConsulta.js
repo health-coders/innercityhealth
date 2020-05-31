@@ -7,23 +7,24 @@ import {
     Keyboard,
     TouchableWithoutFeedback,
     TouchableOpacity,
-    Alert
-} from 'react-native'
+    Alert,
+    ScrollView,
+} from 'react-native';
 import {Picker} from '@react-native-community/picker';
-import DateTimePickerModal from "react-native-modal-datetime-picker";
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import {guardarCitaDisponibles} from '../../actions';
-import connect from "react-redux/lib/connect/connect";
+import connect from 'react-redux/lib/connect/connect';
 
 const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route}) => {
 
     const cita = route.params;
 
-    const [tipoConsulta, setTipoConsulta] = useState('')
+    const [tipoConsulta, setTipoConsulta] = useState('');
     const [esVisibleDatePicker, setEsVisibleDatePicker] = useState(false);
     const [esVisibleTimePicker, setEsVisibleTimePicker] = useState(false);
 
-    const [fecha, setFecha] = useState('')
-    const [hora, setHora] = useState('')
+    const [fecha, setFecha] = useState('');
+    const [hora, setHora] = useState('');
 
     const mostrarDatePicker = () => {
         setEsVisibleDatePicker(true);
@@ -38,7 +39,7 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
         ocultarDatePicker();
     };
     const confirmarHora = (hora) => {
-        setHora(hora.toLocaleString('en-US', {hour: 'numeric', minute: '2-digit'}))
+        setHora(hora.toLocaleString('en-US', {hour: 'numeric', minute: '2-digit'}));
         ocultarTimePicker();
     };
 
@@ -52,23 +53,23 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
 
     //TODO
     const guardarCita = () => {
-        navigation.goBack()
+        Alert.alert('CITA REGISTRADA', 'Su cita se ha registrado exitosamente', ['Ok']);
         setTimeout(() => {
-            Alert.alert('CITA REGISTRADA')
-        }, 1800)
+            navigation.goBack();
+        }, 1000);
         //guardarCitaDisponibles(cita)
 
-    }
+    };
 
     return (
         <>
-            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <ScrollView onPress={() => Keyboard.dismiss()}>
                 <View>
                     <Text style={{
                         fontWeight: 'bold',
                         fontSize: 30,
                         marginLeft: 20,
-                        marginVertical: 15
+                        marginVertical: 15,
                     }}>Agendar una consulta</Text>
 
                     <View>
@@ -137,19 +138,19 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                         </Text>
 
                         <TouchableOpacity style={styles.btnSeleccionar} onPress={() => {
-                            guardarCita()
+                            guardarCita();
                         }}>
                             <Text style={{
                                 fontWeight: 'bold',
                                 color: '#fff',
                                 fontSize: 18,
                                 paddingHorizontal: 40,
-                                alignSelf: 'flex-end'
+                                alignSelf: 'flex-end',
                             }}>Continuar</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
-            </TouchableWithoutFeedback>
+            </ScrollView>
         </>
 
     );
@@ -178,7 +179,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         width: '70%',
         backgroundColor: '#dcdcdc',
-        borderRadius: 15
+        borderRadius: 15,
     },
     btnSeleccionar: {
         backgroundColor: '#792bff',
@@ -187,11 +188,12 @@ const styles = StyleSheet.create({
         padding: 5,
         paddingHorizontal: 10,
         alignSelf: 'center',
+        marginBottom: 20,
     },
 });
-    //TODO
+//TODO
 const mapDispatchToProps = dispatch => ({
-    onGuardarCitasDisponibles: cita => dispatch(guardarCitaDisponibles(cita))
+    onGuardarCitasDisponibles: cita => dispatch(guardarCitaDisponibles(cita)),
 });
 
 export default connect(null, mapDispatchToProps)(PantallaAgendarConsulta);
