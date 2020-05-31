@@ -58,22 +58,6 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
 
     const guardarCita = () => {
 
-        const userJson = JSON.parse(obtenerObjeto('user'));
-
-        postearAPI('servicio', {
-            id: shortid.generate(),
-            numero_servicio: shortid.generate(),
-            tipo_servicio: 1,
-            solicitante: userJson.id,
-            fecha_generacion: fecha,
-            propridad: 1,
-            descripcion: descripcionConsulta,
-        }).then(res => {
-            console.log('Respuesta del server: ' + res);
-        }).catch(err => {
-            console.log('Error del server ' + err);
-        });
-
         Alert.alert('CITA REGISTRADA', 'Su cita se ha registrado exitosamente', ['Ok']);
         setTimeout(() => {
             navigation.goBack();

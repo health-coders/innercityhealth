@@ -4,7 +4,7 @@ import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
 const PantallaBuscandoAtencion = () => {
 
-    const [aceptado, setAceptado] = useState(false)
+    const [aceptado, setAceptado] = useState(true)
     const localizacionActualPaciente = {
         latitude: 6.2392506,
         longitude: -75.6091692,

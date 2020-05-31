@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, Dimensions, TouchableOpacity,ScrollView} from 'react-native'
+import {StyleSheet, View, Text, Dimensions, TouchableOpacity} from 'react-native'
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 
 const PantallaMapaDireccionUsuario = () => {
     const [localizacionActual, setLocalizacion] = useState({
-
         latitude: 6.2392506,
         longitude: -75.6091692,
         latitudeDelta: 0.0122,
@@ -63,56 +62,57 @@ const PantallaMapaDireccionUsuario = () => {
                     marginLeft: 20,
                     marginVertical: 15,
                 }}>Dirección</Text>
-            <View style={styles.container}>
-                <MapView
-                    initialRegion={localizacionActual}
-                    provider={PROVIDER_GOOGLE}
-                    style={styles.map}
-                    zoomEnabled={true}
-                    showsMyLocationButton={false}
-                    showsUserLocation={true}
-                    ref={ref => setMovimiento(ref)}
-                    onPress={escogerLocalizacionConClick}
-                >{marcador}</MapView>
+                <View style={styles.container}>
+                    <MapView
+                        initialRegion={localizacionActual}
+                        provider={PROVIDER_GOOGLE}
+                        style={styles.map}
+                        zoomEnabled={true}
+                        showsMyLocationButton={false}
+                        showsUserLocation={true}
+                        ref={ref => setMovimiento(ref)}
+                        onPress={escogerLocalizacionConClick}
+                    >{marcador}</MapView>
 
-                <TouchableOpacity
-                    style={styles.boton}
-                    onPress={() => {
-                        gestorLocalizacion
-                    }}>
-                    <Text style={{
-                        color: '#fff',
-                        fontSize: 16,
-                        paddingHorizontal: 40,
-                        alignSelf: 'flex-end',
-                    }}>Mi Ubicación</Text>
-                </TouchableOpacity>
-
-                <View style={{justifyContent:'center' }}>
-                    <View>
-                        <TouchableOpacity style={styles.boton} onPress={() => {
-
+                    <TouchableOpacity
+                        style={styles.boton}
+                        onPress={() => {
+                            gestorLocalizacion
                         }}>
-                            <Text style={{
-                                fontWeight: 'bold',
-                                color: '#fff',
-                                fontSize: 23,
-                                paddingHorizontal: 20,
-                            }}>Continuar</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View>
-                        <TouchableOpacity style={styles.boton} onPress={() => {
-                            //TODO:TERMINOS DE USO
-                            //navigation.navigate('')
-                        }}>
-                            <Text style={{
-                                fontWeight: 'bold',
-                                color: '#fff',
-                                fontSize: 20,
-                                paddingHorizontal: 20,
-                            }}>Volver</Text>
-                        </TouchableOpacity>
+                        <Text style={{
+                            color: '#fff',
+                            fontSize: 16,
+                            paddingHorizontal: 40,
+                            alignSelf: 'flex-end',
+                        }}>Mi Ubicación</Text>
+                    </TouchableOpacity>
+
+                    <View style={{justifyContent: 'center'}}>
+                        <View>
+                            <TouchableOpacity style={styles.boton} onPress={() => {
+
+                            }}>
+                                <Text style={{
+                                    fontWeight: 'bold',
+                                    color: '#fff',
+                                    fontSize: 23,
+                                    paddingHorizontal: 20,
+                                }}>Continuar</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View>
+                            <TouchableOpacity style={styles.boton} onPress={() => {
+                                //TODO:TERMINOS DE USO
+                                //navigation.navigate('')
+                            }}>
+                                <Text style={{
+                                    fontWeight: 'bold',
+                                    color: '#fff',
+                                    fontSize: 20,
+                                    paddingHorizontal: 20,
+                                }}>Volver</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
             </View>

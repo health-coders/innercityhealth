@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, Image} from 'react-native';
 import {connect} from 'react-redux';
 import {guardarCitaDisponibles, guardarCitasPendientes} from '../../actions';
 
-const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes, onGuardarCitasDisponibles}) => {
+const PantallaPrincipalConsultas = ({navigation, onGuardarCitasPendientes, onGuardarCitasDisponibles}) => {
 
     useEffect(() => {
         onGuardarCitasDisponibles([{
@@ -148,4 +148,4 @@ const mapDispatchToProps = dispatch => ({
     onGuardarCitasDisponibles: citas => dispatch(guardarCitaDisponibles(citas))
 });
 
-export default connect(null, mapDispatchToProps)(HomeConsultasScreen);
+export default connect(null, mapDispatchToProps)(PantallaPrincipalConsultas);

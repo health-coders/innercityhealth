@@ -1,8 +1,11 @@
 import React from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import BtnAutenticacionGoogle from '../../componentes/Autenticacion/BotonAutenticacionGoogle';
+import { obtenerObjeto, USUARIO } from "../../objetoSesion/objetoSesion";
 
 const PantallaLoginIndex = ({navigation}) => {
+
+    console.log(obtenerObjeto(USUARIO));
 
     return (
         <>
