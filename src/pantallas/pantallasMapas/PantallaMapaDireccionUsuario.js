@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, Dimensions, TouchableOpacity} from 'react-native'
+import {StyleSheet, View, Text, Dimensions, TouchableOpacity,ScrollView} from 'react-native'
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 
@@ -63,7 +63,7 @@ const PantallaMapaDireccionUsuario = () => {
                     marginLeft: 20,
                     marginVertical: 15,
                 }}>Dirección</Text>
-
+            <View style={styles.container}>
                 <MapView
                     initialRegion={localizacionActual}
                     provider={PROVIDER_GOOGLE}
@@ -78,7 +78,7 @@ const PantallaMapaDireccionUsuario = () => {
                 <TouchableOpacity
                     style={styles.boton}
                     onPress={() => {
-                        gestorLocalizacion()
+                        gestorLocalizacion
                     }}>
                     <Text style={{
                         color: '#fff',

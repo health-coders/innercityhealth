@@ -96,6 +96,10 @@ const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes, onGuardarCit
             <TouchableOpacity
                 onPress={() => navigation.navigate('AgendarConsulta')}
                 style={styles.btnPrincipal}>
+                    <Image
+                        style = {{ width: 200,height: 200}}
+                        source={require('../../assets/HC_GENERAR_CONSULTA.png')}
+                    />
                 <Text
                     style={styles.textoBtn}
                 >
@@ -106,6 +110,10 @@ const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes, onGuardarCit
             <TouchableOpacity style={styles.btnPrincipal}
                               onPress={() => navigation.navigate('MisConsultas')}
             >
+                <Image
+                        style = {{ width: 200,height: 200}}
+                        source={require('../../assets/HC_MIS_CONSULTAS.png')}
+                    />
                 <Text style={styles.textoBtn}> Mis consultas Pendientes</Text>
             </TouchableOpacity>
 
