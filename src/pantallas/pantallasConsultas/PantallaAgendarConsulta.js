@@ -14,11 +14,16 @@ import {Picker} from '@react-native-community/picker';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import {guardarCitaDisponibles} from '../../actions';
 import connect from 'react-redux/lib/connect/connect';
+import shortid from 'shortid';
+import {postearAPI} from '../../servicios/serviciosApp';
+import {obtenerObjeto} from '../../objetoSesion/objetoSesion';
 
 const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route}) => {
 
+    const shortid = require('shortid');
     const cita = route.params;
 
+    const [descripcionConsulta, guardarDescripcionConsulta] = useState('');
     const [tipoConsulta, setTipoConsulta] = useState('');
     const [esVisibleDatePicker, setEsVisibleDatePicker] = useState(false);
     const [esVisibleTimePicker, setEsVisibleTimePicker] = useState(false);
@@ -51,8 +56,24 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
         setEsVisibleTimePicker(false);
     };
 
-    //TODO
     const guardarCita = () => {
+
+        const userJson = JSON.parse(obtenerObjeto('user'));
+
+        postearAPI('servicio', {
+            id: shortid.generate(),
+            numero_servicio: shortid.generate(),
+            tipo_servicio: 1,
+            solicitante: userJson.id,
+            fecha_generacion: fecha,
+            propridad: 1,
+            descripcion: descripcionConsulta,
+        }).then(res => {
+            console.log('Respuesta del server: ' + res);
+        }).catch(err => {
+            console.log('Error del server ' + err);
+        });
+
         Alert.alert('CITA REGISTRADA', 'Su cita se ha registrado exitosamente', ['Ok']);
         setTimeout(() => {
             navigation.goBack();
@@ -70,7 +91,7 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                         fontSize: 31,
                         marginLeft: 20,
                         marginVertical: 15,
-                        textAlign: 'center'
+                        textAlign: 'center',
                     }}>Agendar una consulta</Text>
 
                     <View>
@@ -89,10 +110,12 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                         <Text style={styles.subtitulo}> Motivo de la consulta: </Text>
 
                         <TextInput
-                            //TODO: Corregir el posicionamiento del placeholder
                             placeholder='Motivo de la consulta...'
                             multiline={true}
                             style={styles.textInput}
+                            onChangeText={text => {
+                                guardarDescripcionConsulta(text);
+                            }}
                         />
 
                         <Text style={styles.subtitulo}>Fecha y Hora de la consulta</Text>
@@ -191,7 +214,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
 
-    btnContinuar:{
+    btnContinuar: {
         backgroundColor: '#fc0008',
         marginTop: 12,
         borderRadius: 6,
@@ -200,7 +223,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginBottom: 20,
 
-    }
+    },
 });
 //TODO
 const mapDispatchToProps = dispatch => ({

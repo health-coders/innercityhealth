@@ -26,7 +26,8 @@
     "react-native-safe-area-context": "^3.0.2",
     "react-native-screens": "^2.8.0",
     "react-redux": "^7.2.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "shortid": "^2.2.15"
   },
   "devDependencies": {
     "@babel/core": "^7.10.1",
