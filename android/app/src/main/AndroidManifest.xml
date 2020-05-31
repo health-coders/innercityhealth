@@ -27,6 +27,7 @@
                 android:name="com.google.android.maps.v2.API_KEY"
                 android:value="AIzaSyAidsE-aeqGAnI2u_KgnXWameG4OUR2uM4"
         />
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
     </application>
 
 </manifest>

@@ -182,15 +182,15 @@ const styles = StyleSheet.create({
         backgroundColor: '#dcdcdc',
         borderRadius: 15,
     },
-    btnContinuar: {
+    btnSeleccionar: {
         backgroundColor: '#792bff',
-        marginTop: 12,
+        marginTop: 30,
         borderRadius: 6,
         padding: 5,
         paddingHorizontal: 10,
         alignSelf: 'center',
-        marginBottom: 20,
     },
+
     btnContinuar:{
         backgroundColor: '#fc0008',
         marginTop: 12,
