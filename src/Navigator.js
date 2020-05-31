@@ -10,24 +10,28 @@ import PantallaPrincipalAlertas from './pantallas/pantallasAlertas/PantallaPrinc
 import PantallaInfoConsulta from './pantallas/pantallasConsultas/PantallaInfoConsulta';
 import PantallaAlertaEspecifica from './pantallas/pantallasAlertas/PantallaAlertaEspecifica';
 import PantallaLoginIndex from './pantallas/pantallasLogin/PantallaLoginIndex';
-
 import {obtenerObjeto, USER} from './paquetes/sessionObject/sessionObject';
+import PantallaMapaDireccionUsuario from "./pantallas/pantallasMapas/PantallaMapaDireccionUsuario";
+
 
 const Stack = createStackNavigator();
 
 const Navigation = () => {
 
     let initialScreen = 'Principal';
-    obtenerObjeto(USER).then(res =>{
+    obtenerObjeto(USER).then(res => {
         console.log('OBJETO GUARDADO. PANTALLA NAVIGATION ', res)
         if (!res) {
             initialScreen = 'Login'
         }
     })
 
-
     return <NavigationContainer initialRouteName={initialScreen}>
         <Stack.Navigator>
+            <Stack.Screen name='MapaDireccionUsuario'
+                          component={PantallaMapaDireccionUsuario}
+                          options={{headerShown: false}}
+            />
             <Stack.Screen name='Login'
                           component={PantallaLoginIndex}
                           options={{headerShown: false}}
