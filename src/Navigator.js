@@ -9,13 +9,17 @@ import PantallaPrincipalAlertas from './pantallas/pantallasAlertas/PantallaPrinc
 import PantallaInfoConsulta from './pantallas/pantallasConsultas/PantallaInfoConsulta';
 import PantallaAlertaEspecifica from './pantallas/pantallasAlertas/PantallaAlertaEspecifica';
 import PantallaLoginIndex from './pantallas/pantallasLogin/PantallaLoginIndex';
-
+import PantallaMapaDireccionUsuario from "./pantallas/pantallasMapas/PantallaMapaDireccionUsuario";
 const Stack = createStackNavigator();
 
 const Navigation = () => {
 
     return <NavigationContainer initialRouteName='Login'>
         <Stack.Navigator>
+            <Stack.Screen name='MapaDireccionUsuario'
+                          component={PantallaMapaDireccionUsuario}
+                          options={{headerShown: false}}
+            />
             <Stack.Screen
                 name='Login'
                 component={PantallaLoginIndex}
