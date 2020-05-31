@@ -55,7 +55,7 @@ const PantallaMapaDireccionUsuario = ({navigation}) => {
 
     return (
         <>
-            <View>
+            <View style={styles.container}>
 
                 <Text style={{
                     fontWeight: 'bold',
@@ -123,16 +123,12 @@ const PantallaMapaDireccionUsuario = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         ...StyleSheet.absoluteFillObject,
-        position: 'absolute',
+        height: 400,
         justifyContent: 'flex-end',
         alignItems: 'center',
     },
     map: {
-        width: '90%',
-        height: 350,
-        alignSelf: 'center',
-        borderRadius: 10,
-        marginTop: 20
+        ...StyleSheet.absoluteFillObject
     },
     boton: {
         backgroundColor: '#792bff',
