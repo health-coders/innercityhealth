@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Image, Text, TouchableOpacity, StyleSheet, View} from 'react-native';
 import {GoogleSignin, statusCodes} from '@react-native-community/google-signin';
 import {useNavigation} from '@react-navigation/core';
-import {guardarObjeto, obtenerObjeto, USER} from '../../paquetes/sessionObject/sessionObject';
+import {guardarObjeto, obtenerObjeto, USUARIO} from '../../objetoSesion/objetoSesion';
 
 
 const BtnAutenticacionGoogle = () => {
 
     const navigation = useNavigation();
+
+    useEffect(() => {
+        const user = obtenerObjeto(USUARIO);
+        console.log('USUARIO OBTENIDO EN PANTALLA NAVIGATION');
+        if (user) {
+            return navigation.navigate('Principal');
+        }
+    }, []);
 
     GoogleSignin.configure({
         webClientId: '892945320827-ppfpdca4ujrondilks742cj4ma7i3848.apps.googleusercontent.com' // client ID of type WEB for your server (needed to verify user ID and offline access)
@@ -23,8 +31,8 @@ const BtnAutenticacionGoogle = () => {
             await GoogleSignin.hasPlayServices();
             const userInfo = await GoogleSignin.signIn();
 
-            await guardarObjeto(USER, userInfo);
-            console.log('Objeto guardado desde Boton autenticación: ',obtenerObjeto(USER));
+            await guardarObjeto(USUARIO, userInfo);
+            console.log('Objeto guardado desde Boton autenticación: ',obtenerObjeto(USUARIO));
 
             navigation.navigate('Principal');
         } catch (error) {

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import PantallaPrincipalConsultas from './pantallas/pantallasConsultas/PantallaPrincipalConsultas';
@@ -11,26 +10,16 @@ import PantallaInfoConsulta from './pantallas/pantallasConsultas/PantallaInfoCon
 import PantallaAlertaEspecifica from './pantallas/pantallasAlertas/PantallaAlertaEspecifica';
 import PantallaLoginIndex from './pantallas/pantallasLogin/PantallaLoginIndex';
 
-import {obtenerObjeto, USER} from './paquetes/sessionObject/sessionObject';
-
 const Stack = createStackNavigator();
 
 const Navigation = () => {
 
-    let initialScreen = 'Principal';
-    obtenerObjeto(USER).then(res =>{
-        console.log('OBJETO GUARDADO. PANTALLA NAVIGATION ', res)
-        if (!res) {
-            initialScreen = 'Login'
-        }
-    })
-
-
-    return <NavigationContainer initialRouteName={initialScreen}>
+    return <NavigationContainer initialRouteName='Login'>
         <Stack.Navigator>
-            <Stack.Screen name='Login'
-                          component={PantallaLoginIndex}
-                          options={{headerShown: false}}
+            <Stack.Screen
+                name='Login'
+                component={PantallaLoginIndex}
+                options={{headerShown: false}}
             />
             <Stack.Screen
                 name='Principal'
@@ -68,7 +57,7 @@ const Navigation = () => {
                 options={{headerShown: false}}
             />
         </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer>;
 };
 
 export default Navigation;
