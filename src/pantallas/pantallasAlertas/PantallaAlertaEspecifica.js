@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         marginBottom:10
     },
     subtitulo: {
-        marginHorizontal: 20,
+        marginHorizontal: 10,
         fontSize: 18,
         marginVertical: 10,
         fontWeight: 'bold',
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 180,
         alignSelf: 'center',
-        borderRadius: 10,
+        borderRadius: 5,
         shadowColor: '#000',
         shadowOffset: {width: 0, height: 2},
         shadowOpacity: 0.8,
@@ -86,8 +86,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
     },
     btnSeleccionar: {
-        backgroundColor: '#792bff',
-        marginTop: 20,
+        backgroundColor: '#db0202',
+        marginTop: 30,
         borderRadius: 6,
         padding: 5,
         paddingHorizontal: 10,
