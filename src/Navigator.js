@@ -10,6 +10,7 @@ import PantallaInfoConsulta from './pantallas/pantallasConsultas/PantallaInfoCon
 import PantallaAlertaEspecifica from './pantallas/pantallasAlertas/PantallaAlertaEspecifica';
 import PantallaLoginIndex from './pantallas/pantallasLogin/PantallaLoginIndex';
 import PantallaMapaDireccionUsuario from "./pantallas/pantallasMapas/PantallaMapaDireccionUsuario";
+import PantallaCompletarPerfil from './pantallas/pantallasLogin/PantallaCompletarPerfil';
 const Stack = createStackNavigator();
 
 const Navigation = () => {
@@ -17,8 +18,13 @@ const Navigation = () => {
     return <NavigationContainer initialRouteName='Login'>
         <Stack.Navigator>
 
+
             <Stack.Screen name='MapaDireccionUsuario'
                           component={PantallaMapaDireccionUsuario}
+                          options={{headerShown: false}}
+            />
+            <Stack.Screen name='CompletarPerfil'
+                          component={PantallaCompletarPerfil}
                           options={{headerShown: false}}
             />
             <Stack.Screen
@@ -32,6 +38,12 @@ const Navigation = () => {
                 component={PantallaPrincipal}
                 options={{headerShown: false}}
             />
+
+            <Stack.Screen
+                name='AgendarConsulta'
+                component={PantallaAgendarConsulta}
+                options={{headerShown: false}}
+            />
             <Stack.Screen
                 name='PrincipalConsultas'
                 component={PantallaPrincipalConsultas}
@@ -43,18 +55,17 @@ const Navigation = () => {
                 options={{headerShown: false}}
             />
             <Stack.Screen
-                name='AgendarConsulta'
-                component={PantallaAgendarConsulta}
+                name='InfoConsulta'
+                component={PantallaInfoConsulta}
                 options={{headerShown: false}}
             />
+
+
+
+
             <Stack.Screen
                 name='PrincipalAlertas'
                 component={PantallaPrincipalAlertas}
-                options={{headerShown: false}}
-            />
-            <Stack.Screen
-                name='InfoConsulta'
-                component={PantallaInfoConsulta}
                 options={{headerShown: false}}
             />
             <Stack.Screen
@@ -62,6 +73,8 @@ const Navigation = () => {
                 component={PantallaAlertaEspecifica}
                 options={{headerShown: false}}
             />
+
+
         </Stack.Navigator>
     </NavigationContainer>;
 };
