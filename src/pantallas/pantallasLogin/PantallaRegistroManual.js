@@ -6,7 +6,7 @@ const PantallaRegitroManual = ({navigation}) => {
     const [nombre,setNombre] = useState('')
     const [apellido,setApellido] = useState('')
     const [correo,setCorreo] = useState('')
-    const [contrasegna,setcontrasegna] = useState('')
+    const [contrasegna,setContrasegna] = useState('')
     const [ConfirmarContrasegna,setConfirmarContrasegna] = useState('')
 
     return (
@@ -24,6 +24,7 @@ const PantallaRegitroManual = ({navigation}) => {
                 placeholder='Nombre'
                 multiline={true}
                 style={styles.textInput}
+                onValueChange={texto => setNombre(texto)}
             />
             <Text style={styles.subtitulo}>Apellido: </Text>
 
@@ -31,6 +32,7 @@ const PantallaRegitroManual = ({navigation}) => {
                 placeholder='Apellido'
                 multiline={true}
                 style={styles.textInput}
+                onValueChange={texto => setApellido(texto)}
             />
             <Text style={styles.subtitulo}>Correo: </Text>
 
@@ -38,6 +40,7 @@ const PantallaRegitroManual = ({navigation}) => {
                 placeholder='Correo'
                 multiline={true}
                 style={styles.textInput}
+                onValueChange={texto => setCorreo(texto)}
             />
             <Text style={styles.subtitulo}>Contraseña: </Text>
 
@@ -45,6 +48,7 @@ const PantallaRegitroManual = ({navigation}) => {
                 placeholder='Contraseña'
                 multiline={true}
                 style={styles.textInput}
+                onValueChange={texto => setContrasegna(texto)}
             />
             <Text style={styles.subtitulo}>Confirmar Contraseña: </Text>
 
@@ -52,11 +56,11 @@ const PantallaRegitroManual = ({navigation}) => {
                 placeholder='Confirmar Contraseña'
                 multiline={true}
                 style={styles.textInput}
+                onValueChange={texto => setConfirmarContrasegna(texto)}
             />
 
             <TouchableOpacity style={styles.btnContinuar} onPress={() => {
-
-                navigation.navigate('')
+                navigation.navigate('CompletarPerfil')
             }}>
                 <Text style={{
                     fontWeight: 'bold',

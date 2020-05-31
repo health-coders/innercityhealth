@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Text, ScrollView, TextInput, TouchableOpacity} from 'react-native'
 import {Picker} from '@react-native-community/picker';
 
-const PantallaCompletarPerfil = () =>{
+const PantallaCompletarPerfil = ({navigation}) =>{
 
     const [eps, setEps] = useState('')
 
@@ -29,7 +29,7 @@ const PantallaCompletarPerfil = () =>{
                         <Picker.Item label='Coomeva' value='Coomeva'/>
                         <Picker.Item label='Nueva EPS' value='NuevaEps'/>
                     </Picker>
-                    <Text style={styles.subtitulo}> Descrición de la Alerta </Text>
+                    <Text style={styles.subtitulo}> Descrición del Domicilio</Text>
 
                     <TextInput
 
@@ -38,7 +38,7 @@ const PantallaCompletarPerfil = () =>{
                         style={styles.textInput}
                     />
                     <TouchableOpacity style={styles.btnRegistrar} onPress={() => {
-
+                        navigation.navigate('Principal')
                     }}>
                         <Text style={{
                             fontWeight: 'bold',
@@ -55,6 +55,7 @@ const PantallaCompletarPerfil = () =>{
             </>
     )
 }
+
 const styles = StyleSheet.create({
     picker: {
         alignSelf: 'center',
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     },
     textInput: {
         width: '100%',
-        height: 180,
+        height: 50,
         alignSelf: 'center',
         borderRadius: 5,
         shadowColor: '#000',
@@ -93,3 +94,5 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
 });
+
+export default PantallaCompletarPerfil;
