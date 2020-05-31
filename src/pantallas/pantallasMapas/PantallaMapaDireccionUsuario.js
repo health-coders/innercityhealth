@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, Dimensions, TouchableOpacity} from 'react-native
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 
-const PantallaMapaDireccionUsuario = ({navigation}) => {
+const PantallaMapaDireccionUsuario = () => {
     const [localizacionActual, setLocalizacion] = useState({
 
         latitude: 6.2392506,

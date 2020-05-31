@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Text, ScrollView, TextInput, TouchableOpacity} from 'react-native'
 import {Picker} from '@react-native-community/picker';
 
-const PantallaAlertaEspecifica = () => {
+const PantallaAlertaEspecifica = ({navigation}) => {
 
     const [prioridadAlerta, setPrioridadAlerta] = useState('')
     const [motivo, setMotivo] = useState('')
@@ -22,7 +22,7 @@ const PantallaAlertaEspecifica = () => {
                     <Picker
                         style={styles.picker}
                         selectedValue={prioridadAlerta}
-                        onValueChange={(valor) => setprioridadAlerta(valor)}
+                        onValueChange={(valor) => setPrioridadAlerta(valor)}
                     >
                         <Picker.Item label='- Prioridad de la Alerta -' value=''/>
                         <Picker.Item label='Alta (Se ve comprometida la vida del paciente)' value='Alta'/>
@@ -40,7 +40,7 @@ const PantallaAlertaEspecifica = () => {
                     />
 
                     <TouchableOpacity style={styles.btnSeleccionar} onPress={() => {
-                        //TODO: Redirigir a pantalla de mapas
+                        navigation.navigate('BuscandoAtencion')
                     }}>
                         <Text style={{
                             fontWeight: 'bold',
