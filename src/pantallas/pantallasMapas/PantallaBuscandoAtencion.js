@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, View, Text, Dimensions} from 'react-native'
+import {StyleSheet, View, Text, Dimensions,TouchableWithoutFeedback} from 'react-native'
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import MapMarker from "react-native-maps/lib/components/MapMarker";
 
@@ -29,6 +29,12 @@ const PantallaBuscandoAtencion = () => {
 
     return (
         <>
+            <Text style={{
+                fontWeight: 'bold',
+                fontSize: 30,
+                marginLeft: 20,
+                marginVertical: 15,
+            }}>Solicitando ayuda...</Text>
             <MapView
                 initialRegion={localizacionActualPaciente}
                 region={localizacionActualPaciente}
@@ -41,6 +47,10 @@ const PantallaBuscandoAtencion = () => {
                 <MapView.Marker coordinate={localizacionActualPaciente}/>
                 {marcadorParamedico}
             </MapView>
+            <TouchableWithoutFeedback>
+
+                <Text>{aceptado? 'En camino':'Solicitando ayuda'}</Text>
+            </TouchableWithoutFeedback>
 
         </>
     );
