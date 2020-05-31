@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, Dimensions} from 'react-native'
-import MapView,{PROVIDER_GOOGLE} from 'react-native-maps';
+import {StyleSheet, View, Text, Dimensions, TouchableOpacity} from 'react-native'
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import Geolocation from '@react-native-community/geolocation';
 
-const PantallaMapaDireccionUsuario = () => {
-
+const PantallaMapaDireccionUsuario = ({navigator}) => {
     const [localizacionActual, setLocalizacion] = useState({
 
         latitude: 6.2392506,
@@ -34,6 +34,25 @@ const PantallaMapaDireccionUsuario = () => {
         setMarcador(<MapView.Marker coordinate={localizacionActual}/>)
     }
 
+    const gestorLocalizacion = () => {
+        Geolocation.getCurrentPosition(
+            posicion => {
+                const coords = {
+                    nativeEvent: {
+                        coordinate: {
+                            latitude: posicion.coords.latitude,
+                            longitude: posicion.coords.longitude
+                        }
+                    }
+                };
+                escogerLocalizacionConClick(coords)
+            },
+            err => {
+                console.log(err);
+                alert("Error al obtener la localización. ¡Intenta de nuevo o escoge una manualmente!")
+            })
+    }
+
     return (
         <>
             <View>
@@ -47,6 +66,32 @@ const PantallaMapaDireccionUsuario = () => {
                     ref={ref => setMovimiento(ref)}
                     onPress={escogerLocalizacionConClick}
                 />
+
+                <TouchableOpacity
+                    style={styles.boton}
+                    onPress={() => {
+                        gestorLocalizacion()
+                    }}>
+                    <Text style={{
+                        color: '#fff',
+                        fontSize: 16,
+                        paddingHorizontal: 40,
+                        alignSelf: 'flex-end',
+                    }}>Mi Ubicación</Text>
+                </TouchableOpacity>
+
+
+                <TouchableOpacity style={styles.boton} onPress={() => {
+
+                }}>
+                    <Text style={{
+                        fontWeight: 'bold',
+                        color: '#fff',
+                        fontSize: 23,
+                        paddingHorizontal: 40,
+                        alignSelf: 'flex-end',
+                    }}>Continuar</Text>
+                </TouchableOpacity>
             </View>
         </>
     );
@@ -56,10 +101,19 @@ const styles = StyleSheet.create({
     map: {
         width: '90%',
         height: 350,
-        alignSelf:'center',
-        borderRadius:10,
+        alignSelf: 'center',
+        borderRadius: 10,
         marginTop: 20
-    }
+    },
+    boton: {
+        backgroundColor: '#792bff',
+        marginTop: 25,
+        borderRadius: 6,
+        padding: 5,
+        paddingHorizontal: 10,
+        alignSelf: 'center',
+        marginBottom: 20,
+    },
 });
 
 export default PantallaMapaDireccionUsuario;

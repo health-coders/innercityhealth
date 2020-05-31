@@ -137,7 +137,7 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                             Hora: {hora}
                         </Text>
 
-                        <TouchableOpacity style={styles.btnSeleccionar} onPress={() => {
+                        <TouchableOpacity style={styles.btnContinuar} onPress={() => {
                             guardarCita();
                         }}>
                             <Text style={{
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#dcdcdc',
         borderRadius: 15,
     },
-    btnSeleccionar: {
+    btnContinuar: {
         backgroundColor: '#792bff',
         marginTop: 12,
         borderRadius: 6,
