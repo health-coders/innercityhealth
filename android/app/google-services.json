@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "892945320827",
+    "firebase_url": "https://innercity-health-user.firebaseio.com",
+    "project_id": "innercity-health-user",
+    "storage_bucket": "innercity-health-user.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892945320827:android:d58ee1c064b14f1e2c8bde",
+        "android_client_info": {
+          "package_name": "com.innercityhealth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892945320827-n90f1adapg6309sjcsbn7f1bnqqsiv82.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.innercityhealth",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "892945320827-ppfpdca4ujrondilks742cj4ma7i3848.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq7HCdWmPqdqgOmUD66TL9Ex4_Zrt-3LI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892945320827-ppfpdca4ujrondilks742cj4ma7i3848.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

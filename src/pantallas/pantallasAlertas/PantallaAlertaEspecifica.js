@@ -59,7 +59,7 @@ const PantallaAlertaEspecifica = () => {
 const styles = StyleSheet.create({
     picker: {
         alignSelf: 'center',
-        width: '70%',
+        width: '90%',
         backgroundColor: '#dcdcdc',
         borderRadius: 15,
         marginBottom:10
