@@ -11,6 +11,7 @@ import PantallaAlertaEspecifica from './pantallas/pantallasAlertas/PantallaAlert
 import PantallaLoginIndex from './pantallas/pantallasLogin/PantallaLoginIndex';
 import PantallaMapaDireccionUsuario from "./pantallas/pantallasMapas/PantallaMapaDireccionUsuario";
 import PantallaCompletarPerfil from './pantallas/pantallasLogin/PantallaCompletarPerfil';
+import PantallaRegitroManual from "./pantallas/pantallasLogin/PantallaRegistroManual";
 const Stack = createStackNavigator();
 
 const Navigation = () => {
@@ -22,6 +23,11 @@ const Navigation = () => {
             <Stack.Screen name='MapaDireccionUsuario'
                           component={PantallaMapaDireccionUsuario}
                           options={{headerShown: false}}
+                />
+            <Stack.Screen
+                name='RegistroManual'
+                component={PantallaRegitroManual}
+                options={{headerShown: false}}
             />
             <Stack.Screen name='CompletarPerfil'
                           component={PantallaCompletarPerfil}
@@ -31,6 +37,10 @@ const Navigation = () => {
                 name='Login'
                 component={PantallaLoginIndex}
                 options={{headerShown: false}}
+            />
+            <Stack.Screen name='MapaDireccionUsuario'
+                          component={PantallaMapaDireccionUsuario}
+                          options={{headerShown: false}}
             />
 
             <Stack.Screen

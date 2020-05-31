@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, Dimensions, TouchableOpacity} from 'react-native
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 
-const PantallaMapaDireccionUsuario = ({navigator}) => {
+const PantallaMapaDireccionUsuario = ({navigation}) => {
     const [localizacionActual, setLocalizacion] = useState({
 
         latitude: 6.2392506,
@@ -88,18 +88,33 @@ const PantallaMapaDireccionUsuario = ({navigator}) => {
                     }}>Mi Ubicación</Text>
                 </TouchableOpacity>
 
+                <View style={{justifyContent:'center' }}>
+                    <View>
+                        <TouchableOpacity style={styles.boton} onPress={() => {
 
-                <TouchableOpacity style={styles.boton} onPress={() => {
-
-                }}>
-                    <Text style={{
-                        fontWeight: 'bold',
-                        color: '#fff',
-                        fontSize: 23,
-                        paddingHorizontal: 40,
-                        alignSelf: 'flex-end',
-                    }}>Continuar</Text>
-                </TouchableOpacity>
+                        }}>
+                            <Text style={{
+                                fontWeight: 'bold',
+                                color: '#fff',
+                                fontSize: 23,
+                                paddingHorizontal: 20,
+                            }}>Continuar</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View>
+                        <TouchableOpacity style={styles.boton} onPress={() => {
+                            //TODO:TERMINOS DE USO
+                            //navigation.navigate('')
+                        }}>
+                            <Text style={{
+                                fontWeight: 'bold',
+                                color: '#fff',
+                                fontSize: 20,
+                                paddingHorizontal: 20,
+                            }}>Volver</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
             </View>
         </>
     );

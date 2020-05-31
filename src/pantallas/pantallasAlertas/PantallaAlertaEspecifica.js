@@ -4,7 +4,8 @@ import {Picker} from '@react-native-community/picker';
 
 const PantallaAlertaEspecifica = () => {
 
-    const [prioridadAlerta, setprioridadAlerta] = useState('')
+    const [prioridadAlerta, setPrioridadAlerta] = useState('')
+    const [motivo, setMotivo] = useState('')
     return (
         <>
             <ScrollView style={styles.contenedor}>
@@ -46,7 +47,7 @@ const PantallaAlertaEspecifica = () => {
                             color: '#fff',
                             fontSize: 18,
                             paddingHorizontal: 40,
-                            alignSelf: 'flex-end'
+                            alignSelf: 'flex-end',
                         }}>Solicitar ayuda</Text>
                     </TouchableOpacity>
 
