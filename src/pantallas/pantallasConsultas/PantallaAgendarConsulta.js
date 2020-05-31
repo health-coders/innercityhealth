@@ -67,9 +67,10 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                 <View>
                     <Text style={{
                         fontWeight: 'bold',
-                        fontSize: 30,
+                        fontSize: 31,
                         marginLeft: 20,
                         marginVertical: 15,
+                        textAlign: 'center'
                     }}>Agendar una consulta</Text>
 
                     <View>
@@ -97,7 +98,7 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                         <Text style={styles.subtitulo}>Fecha y Hora de la consulta</Text>
 
                         <TouchableOpacity style={styles.btnSeleccionar} onPress={mostrarDatePicker}>
-                            <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 17, paddingHorizontal: 5}}>
+                            <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 16, paddingHorizontal: 5}}>
                                 Seleccionar Fecha
                             </Text>
                         </TouchableOpacity>
@@ -117,7 +118,7 @@ const PantallaAgendarConsulta = ({navigation, onGuardarCitasDisponibles, route})
                         </Text>
 
                         <TouchableOpacity style={styles.btnSeleccionar} onPress={mostrarTimePicker}>
-                            <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 17, paddingHorizontal: 5}}>
+                            <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 16, paddingHorizontal: 5}}>
                                 Seleccionar Hora
                             </Text>
                         </TouchableOpacity>
@@ -165,14 +166,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     textInput: {
-        width: '80%',
+        width: '85%',
         height: 230,
         alignSelf: 'center',
-        borderRadius: 10,
+        borderRadius: 5,
         shadowColor: '#000',
         shadowOffset: {width: 0, height: 2},
         shadowOpacity: 0.8,
-        shadowRadius: 2,
+        shadowRadius: 4,
         elevation: 3,
     },
     picker: {
@@ -190,6 +191,16 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginBottom: 20,
     },
+    btnContinuar:{
+        backgroundColor: '#fc0008',
+        marginTop: 12,
+        borderRadius: 6,
+        padding: 6,
+        paddingHorizontal: 10,
+        alignSelf: 'center',
+        marginBottom: 20,
+
+    }
 });
 //TODO
 const mapDispatchToProps = dispatch => ({
