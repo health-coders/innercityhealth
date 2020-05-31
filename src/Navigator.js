@@ -12,6 +12,7 @@ import PantallaLoginIndex from './pantallas/pantallasLogin/PantallaLoginIndex';
 import PantallaMapaDireccionUsuario from "./pantallas/pantallasMapas/PantallaMapaDireccionUsuario";
 import PantallaCompletarPerfil from './pantallas/pantallasLogin/PantallaCompletarPerfil';
 import PantallaRegitroManual from "./pantallas/pantallasLogin/PantallaRegistroManual";
+import PantallaBuscandoAtencion from "./pantallas/pantallasMapas/PantallaBuscandoAtencion";
 
 const Stack = createStackNavigator();
 
@@ -31,13 +32,17 @@ const Navigation = () => {
                 component={PantallaRegitroManual}
                 options={{headerShown: false}}
             />
+            <Stack.Screen
+                name='BuscandoAtencion'
+                component={PantallaBuscandoAtencion}
+                options={{headerShown: false}}
+            />
 
             <Stack.Screen
                 name='CompletarPerfil'
                 component={PantallaCompletarPerfil}
                 options={{headerShown: false}}
             />
-
 
 
             <Stack.Screen
