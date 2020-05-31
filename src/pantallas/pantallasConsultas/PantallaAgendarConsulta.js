@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#dcdcdc',
         borderRadius: 15,
     },
-    btnSeleccionar: {
+    btnContinuar: {
         backgroundColor: '#792bff',
         marginTop: 12,
         borderRadius: 6,

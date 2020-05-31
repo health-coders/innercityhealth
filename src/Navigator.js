@@ -16,6 +16,7 @@ const Navigation = () => {
 
     return <NavigationContainer initialRouteName='Login'>
         <Stack.Navigator>
+
             <Stack.Screen name='MapaDireccionUsuario'
                           component={PantallaMapaDireccionUsuario}
                           options={{headerShown: false}}
@@ -25,6 +26,7 @@ const Navigation = () => {
                 component={PantallaLoginIndex}
                 options={{headerShown: false}}
             />
+
             <Stack.Screen
                 name='Principal'
                 component={PantallaPrincipal}
