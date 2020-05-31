@@ -56,6 +56,14 @@ const PantallaMapaDireccionUsuario = ({navigator}) => {
     return (
         <>
             <View>
+
+                <Text style={{
+                    fontWeight: 'bold',
+                    fontSize: 30,
+                    marginLeft: 20,
+                    marginVertical: 15,
+                }}>Dirección</Text>
+
                 <MapView
                     initialRegion={localizacionActual}
                     provider={PROVIDER_GOOGLE}
