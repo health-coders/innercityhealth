@@ -10,13 +10,31 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.11.0",
+    "@react-native-community/datetimepicker": "^2.4.0",
+    "@react-native-community/geolocation": "^2.0.2",
+    "@react-native-community/google-signin": "^4.0.3",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/picker": "^1.6.1",
+    "@react-navigation/native": "^5.5.0",
+    "@react-navigation/stack": "^5.4.1",
     "react": "16.11.0",
-    "react-native": "0.62.2"
+    "react-native": "0.62.2",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-maps": "0.27.1",
+    "react-native-modal-datetime-picker": "^8.7.0",
+    "react-native-safe-area-context": "^3.0.2",
+    "react-native-screens": "^2.8.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "shortid": "^2.2.15"
   },
   "devDependencies": {
     "@babel/core": "^7.10.1",
     "@babel/runtime": "^7.10.1",
     "@react-native-community/eslint-config": "^1.1.0",
+    "@react-navigation/core": "^5.9.0",
+    "axios": "^0.19.2",
     "babel-jest": "^26.0.1",
     "eslint": "^7.1.0",
     "jest": "^26.0.1",
