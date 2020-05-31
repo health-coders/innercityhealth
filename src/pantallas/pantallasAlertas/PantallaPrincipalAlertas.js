@@ -24,8 +24,12 @@ const PantallaPrincipalAlertas = ({navigation}) => {
             <TouchableOpacity
                 style={styles.btnPrincipal}
                 onPress={() => navigation.navigate('AlertaEspecifica')}
+                
             >
-                <Image style={{width:200,height: 200}}source={require('../../assets/HC_ALERTA_ESP.png')}/>
+                <Image
+                        style = {{ width: 200,height: 200}}
+                        source={require('../../assets/HC_ALERTA_ESP.png')}
+                    />
                 <Text style={styles.textoBtn}>Alerta Específica</Text>
             </TouchableOpacity>
             </View>

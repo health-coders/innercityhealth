@@ -1,13 +1,18 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity,Image} from 'react-native';
 
 const PantallaPrincipal = ({navigation}) => {
     return (
         <>
+            
             <TouchableOpacity
                 style={styles.btnPrincipal}
                 onPress={()=>navigation.navigate('PrincipalAlertas')}
             >
+                <Image
+                        style = {{ width: 200,height: 200}}
+                        source={require('../../assets/HC_FastAlert.png')}
+                    />
                 <Text style={styles.textoBtn}>Alertas</Text>
             </TouchableOpacity>
 
@@ -15,6 +20,10 @@ const PantallaPrincipal = ({navigation}) => {
                 style={styles.btnPrincipal}
                 onPress={() => navigation.navigate('PrincipalConsultas')}
             >
+                <Image
+                        style = {{ width: 200,height: 200}}
+                        source={require('../../assets/HC_consultas.png')}
+                    />
                 <Text style={styles.textoBtn}>Consultas</Text>
             </TouchableOpacity>
         </>
